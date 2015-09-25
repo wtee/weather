@@ -1,0 +1,21 @@
+<!doctype html>
+<head>
+  <title>Waterloo/Cedar Falls cancellations</title>
+</head>
+<body>
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'cancel/style.css' %}" />
+
+<p><strong>Want to post a cancellation? Contact <a href="mailto:email@email.com">email@email.com</a>. Already have an account? <a href="/admin/">Login here</a>.</strong></p>
+{% if cancel_list %}
+  <table>
+    <tr><th>Date</th><th>Organization</th><th>Type of cancellation</th><th>Details</th></tr>
+  {% for cancel in cancel_list %}
+    <tr><td>{{cancel.cancel_date}}</td><td>{{cancel.organization}} <br /> {{cancel.address}}</td><td>{{cancel.type_of_cancel}}</td><td>{{cancel.details}}</td></tr>
+  {% endfor %}
+  </table>
+{% else %}
+  <p>No cancellations or delays have been reported.</p>
+{% endif %}
+</body>

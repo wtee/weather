@@ -1,0 +1,10 @@
+{% if cancel_detail %}
+<h1>Cancellation</h1>
+<h2>Date</h2>
+<p>{{cancel_detail.cancel.date}}</p>
+<h2>Organization</h2>
+<p>{{cancel_detail.org_name}} <br /> {{cancel_detail.address}}</p>
+<h2>Type of cancellation</h2>
+<p>{{cancel_detail.type_of_cancel}}</p>
+<h2>Details</h2>
+<p>{{cancel_detail.details}}</p>
